@@ -21,7 +21,7 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/auth.css">
+
     <style>
         /* Custom 769px-969px breakpoint for About Me and Navbar */
         @media (min-width: 769px) and (max-width: 969px) {
@@ -3296,8 +3296,7 @@
 
 
 
-    <!-- Auth Script -->
-    <script src="js/auth.js"></script>
+
 
     <!-- Contact Form API Integration -->
     <script>
@@ -3320,7 +3319,7 @@
             responseDiv.innerText = '';
 
             try {
-                const res = await fetch('http://localhost:5000/api/contact', {
+                const res = await fetch('http://127.0.0.1:5000/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
@@ -3334,12 +3333,12 @@
                     document.getElementById('contact-form').reset();
                 } else {
                     responseDiv.style.color = '#e74c3c';
-                    responseDiv.innerText = '❌ Error: ' + (data.message || 'Something went wrong.');
+                    responseDiv.innerText = '❌ Error (' + res.status + '): ' + (data.message || 'Something went wrong.');
                 }
             } catch (err) {
                 console.error('Contact Error:', err);
                 responseDiv.style.color = '#e74c3c';
-                responseDiv.innerText = '❌ Failed to connect to server. Ensure backend is running.';
+                responseDiv.innerText = '❌ Connection Error: ' + err.message + '. Ensure backend (port 5000) is running.';
             } finally {
                 btn.disabled = false;
                 btn.innerText = 'Send Message';
