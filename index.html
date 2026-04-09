@@ -2050,7 +2050,7 @@
             .skill-cards-row,
             .horizontal-skills-grid {
                 display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
                 gap: 12px !important;
                 padding-left: 0 !important;
                 padding-right: 0 !important;
@@ -2080,6 +2080,8 @@
                 height: 100% !important;
                 border-radius: 12px !important;
                 text-align: center !important;
+                overflow-wrap: anywhere !important;
+                word-break: break-word !important;
             }
 
             /* Circular progress resize for mobile */
@@ -2117,6 +2119,11 @@
                 margin-left: 0 !important;
             }
 
+            .about-content .description {
+                font-size: 0.85rem !important;
+                line-height: 1.4 !important;
+            }
+
             .info-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
@@ -2135,12 +2142,12 @@
 
             .info-item .label {
                 width: auto !important;
-                font-size: 0.9rem !important;
+                font-size: 0.8rem !important;
                 font-weight: 700;
             }
 
             .info-item .value {
-                font-size: 0.95rem !important;
+                font-size: 0.85rem !important;
                 word-break: break-all;
             }
 
@@ -2154,7 +2161,6 @@
                 margin-bottom: 30px !important;
             }
 
-            .about-content h2,
             .skills-section h2,
             .resume-content h2,
             .section-title-wrapper h2,
@@ -2162,6 +2168,12 @@
             .contact-header h2 {
                 font-size: 1.8rem !important;
                 margin-bottom: 25px !important;
+                text-align: center !important;
+            }
+
+            .about-content h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 15px !important;
                 text-align: center !important;
             }
 
@@ -2397,7 +2409,7 @@
                 <span>MongoDB</span>
             </div>
             <div class="skill-card">
-                <img src="https://img.icons8.com/ios_filled/1200/javascript-logo.jpg" alt="JavaScript">
+                <img src="/Images/javascript-logo-removebg-preview.png" alt="JavaScript">
                 <span>JavaScript</span>
             </div>
            
